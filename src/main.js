@@ -10,6 +10,11 @@ const store = createStore({
 			count: 0
 		}
 	},
+	getters:{
+		getCount (state){
+			return state.count;
+		}
+	},
 	mutations: {
 		increaseCount (state) {
 			state.count++;
@@ -19,6 +24,9 @@ const store = createStore({
 		},
 		doubleCount (state) {
 			state.count*=2
+		},
+		setSpecificValue(state, value){
+			state.count = value
 		}
 	}
 })
